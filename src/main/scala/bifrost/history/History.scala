@@ -38,7 +38,7 @@ class History(val storage: Storage, settings: AppSettings, validators: Seq[Block
   require(NodeViewModifier.ModifierIdSize == 32, "32 bytes ids assumed")
 
   lazy val height: Long = storage.chainHeight
-  lazy val score: BigInt = storage.bestChainScore
+  lazy val score: Long = storage.bestChainScore
   lazy val bestBlockId: ModifierId = storage.bestBlockId
   lazy val difficulty: Long = storage.difficultyOf(bestBlockId).get
   lazy val bestBlock: Block = storage.bestBlock
